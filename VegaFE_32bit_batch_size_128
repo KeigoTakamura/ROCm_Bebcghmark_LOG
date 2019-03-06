@@ -1,0 +1,108 @@
+python tf_cnn_benchmarks.py --num_gpus=1 --batch_size=128 --model=resnet50 --use_fp16
+WARNING: Logging before flag parsing goes to stderr.
+W0306 22:32:25.729336 140688087828224 deprecation.py:305] From /home/w/miniconda3/envs/stylegan_ROCm/lib/python3.6/site-packages/tensorflow/python/ops/distributions/distribution.py:265: ReparameterizationType.__init__ (from tensorflow.python.ops.distributions.distribution) is deprecated and will be removed after 2019-01-01.
+Instructions for updating:
+The TensorFlow Distributions library has moved to TensorFlow Probability (https://github.com/tensorflow/probability). You should update all references to use `tfp.distributions` instead of `tf.distributions`.
+W0306 22:32:25.826831 140688087828224 deprecation.py:305] From /home/w/miniconda3/envs/stylegan_ROCm/lib/python3.6/site-packages/tensorflow/python/ops/distributions/bernoulli.py:169: RegisterKL.__init__ (from tensorflow.python.ops.distributions.kullback_leibler) is deprecated and will be removed after 2019-01-01.
+Instructions for updating:
+The TensorFlow Distributions library has moved to TensorFlow Probability (https://github.com/tensorflow/probability). You should update all references to use `tfp.distributions` instead of `tf.distributions`.
+2019-03-06 22:32:30.082838: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2019-03-06 22:32:30.083207: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1530] Found device 0 with properties: 
+name: Vega 10 XTX [Radeon Vega Frontier Edition]
+AMDGPU ISA: gfx900
+memoryClockRate (GHz) 1.6
+pciBusID 0000:04:00.0
+Total memory: 15.98GiB
+Free memory: 15.73GiB
+2019-03-06 22:32:30.083240: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1641] Adding visible gpu devices: 0
+2019-03-06 22:32:30.083272: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-03-06 22:32:30.083284: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1057]      0 
+2019-03-06 22:32:30.083294: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1070] 0:   N 
+2019-03-06 22:32:30.083344: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1189] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15306 MB memory) -> physical GPU (device: 0, name: Vega 10 XTX [Radeon Vega Frontier Edition], pci bus id: 0000:04:00.0)
+TensorFlow:  1.12
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  128 global
+             128.0 per device
+Num batches: 100
+Num epochs:  0.01
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+Initializing graph
+W0306 22:32:36.058799 140688087828224 deprecation.py:305] From /home/w/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2019-03-06 22:32:37.007150: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1641] Adding visible gpu devices: 0
+2019-03-06 22:32:37.007222: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1051] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-03-06 22:32:37.007236: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1057]      0 
+2019-03-06 22:32:37.007247: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1070] 0:   N 
+2019-03-06 22:32:37.007285: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1189] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15306 MB memory) -> physical GPU (device: 0, name: Vega 10 XTX [Radeon Vega Frontier Edition], pci bus id: 0000:04:00.0)
+I0306 22:32:43.597041 140688087828224 session_manager.py:498] Running local_init_op.
+I0306 22:32:43.668036 140688087828224 session_manager.py:500] Done running local_init_op.
+Running warm up
+2019-03-06 22:33:42.642694: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:33:47.752265: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:33:49.259712: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:33:51.515415: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:33:52.825305: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:33:57.849501: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:33:58.808191: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:34:03.600768: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:34:07.908012: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:34:11.792463: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:34:15.638286: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:34:20.260643: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:34:27.142924: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:34:29.781337: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:34:30.768748: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:34:35.398796: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:34:38.243318: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:34:47.290264: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:34:51.679345: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:35:00.212867: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+warning: <unknown>:0:0: loop not unrolled: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering
+2019-03-06 22:35:04.177786: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:35:05.741890: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+warning: <unknown>:0:0: loop not unrolled: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering
+2019-03-06 22:35:11.341871: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:35:12.379207: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:35:15.209390: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:35:16.768071: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:35:21.859702: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:35:28.663930: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:35:33.087235: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:35:39.446232: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+warning: <unknown>:0:0: loop not unrolled: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering
+2019-03-06 22:35:43.955781: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:35:48.635894: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+warning: <unknown>:0:0: loop not unrolled: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering
+2019-03-06 22:35:50.693890: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:35:51.484166: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:35:53.937270: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:35:55.563205: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+2019-03-06 22:36:00.173806: I tensorflow/core/kernels/conv_grad_input_ops.cc:1023] running auto-tune for Backward-Data
+2019-03-06 22:36:01.775556: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+warning: <unknown>:0:0: loop not unrolled: the optimizer was unable to perform the requested transformation; the transformation might be disabled or specified as part of an unsupported transformation ordering
+2019-03-06 22:36:08.182712: I tensorflow/core/kernels/conv_grad_filter_ops.cc:975] running auto-tune for Backward-Filter
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 188.7 +/- 0.0 (jitter = 0.0)	8.209
+10	images/sec: 187.6 +/- 0.5 (jitter = 0.2)	8.176
+20	images/sec: 187.8 +/- 0.4 (jitter = 0.2)	8.324
+30	images/sec: 187.6 +/- 0.3 (jitter = 0.5)	8.201
+40	images/sec: 187.5 +/- 0.2 (jitter = 0.7)	8.169
+50	images/sec: 187.5 +/- 0.2 (jitter = 0.7)	8.409
+60	images/sec: 187.4 +/- 0.2 (jitter = 0.7)	8.264
+70	images/sec: 187.4 +/- 0.2 (jitter = 0.8)	8.154
+80	images/sec: 187.3 +/- 0.2 (jitter = 1.0)	8.266
+90	images/sec: 187.0 +/- 0.2 (jitter = 1.4)	8.357
+100	images/sec: 186.7 +/- 0.2 (jitter = 1.6)	8.195
+----------------------------------------------------------------
+total images/sec: 186.71
+----------------------------------------------------------------
